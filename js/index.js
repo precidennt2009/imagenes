@@ -15,8 +15,3 @@ $(function() {
 	});
 
 });
-
-//
-function buscaUsuario(){
-	console.log("Entrando...");
-}

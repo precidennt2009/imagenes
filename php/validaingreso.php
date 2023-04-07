@@ -9,18 +9,19 @@ if ($mysqli->connect_errno) {
 }
 else{
     /*VALIDAR INGRESO DEL USUARIO*/
-    $consulta="CALL VALIDAR_INGRESO(".$_POST['username'].", ".$_POST['password'].")";
+    $consulta="CALL VALIDAR_INGRESO('".$_POST['username']."','".$_POST['password']."')";
     echo $consulta;
     $result=$mysqli->query($consulta);
     $r = $result->fetch_array();
     if($r["NUSUARIOS"]==1){
-        echo "entrando";
+        session_start();
+        $_SESSION['username']=$_POST['username'];
+        $_SESSION['nombre']=$r["NOMBRE"];
+        header ("Location: ../php/inicial.php");
     }
     else{
-        header ("Location: ../index.html");
+        $_SESSION['error_ingreso']="Usuario o Password Incorrectos";
+        header ("Location: ../index.php");
     }
-    /*while ($r = $result->fetch_array()) {
-        echo $r["NUSUARIOS"] . "<br>";
-    }*/
 }
 ?>

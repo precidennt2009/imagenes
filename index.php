@@ -8,10 +8,13 @@
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
-<body>
+<body style="background-image: url('imagenes/fondo1.png');background-position: center center;  background-repeat:no-repeat;background-size: cover;">
+<?php
+session_start();
+session_destroy();
+?>
 <div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -52,24 +55,31 @@
 										<div class="row">
 											<div class="col-lg-12">
 												<div class="text-center">
-													<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+													<a href="" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
 												</div>
 											</div>
+											<div style="width: 100%; text-align:center; padding-top:40px"><h4 id="texto_error"><h4>
+												<?php
+													
+												?>
+											</h4></div>
 										</div>
 									</div>
+
 								</form>
+
 								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
+										<input type="text" name="username" id="rusername" tabindex="1" class="form-control" placeholder="Usuario" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+										<input type="email" name="email" id="remail" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
+										<input type="password" name="password" id="rpassword" tabindex="2" class="form-control" placeholder="Contraseña">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+										<input type="password" name="confirm-password" id="rconfirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
 									</div>
 									<div class="form-group">
 										<div class="row">
